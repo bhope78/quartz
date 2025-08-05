@@ -6,5 +6,4 @@ tags: [test, quartz]
 ---
 
 # Test Note
-
 If you're reading this, Quartz is working! 🎉
