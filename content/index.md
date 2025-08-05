@@ -1,5 +1,5 @@
 ---
-title: Welcome to My Quartz Site
+title: Bryan Hope's Portfolio Project Site
 description: A personal digital garden powered by Quartz.
 ---
 
