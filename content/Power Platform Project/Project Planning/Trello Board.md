@@ -1,5 +1,5 @@
 ---
-title: 00 My Trello Board
+title: 00 Trello Task Board
 description: This is an embedded view of my Trello board showing current projects.
 ---
 
