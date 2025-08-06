@@ -1,5 +1,5 @@
 ---
-title: 00 Trello Task Board 7
+title: 00 Trello Task Board 8
 description: This is an embedded view of my Trello board showing current projects.
 ---
 
@@ -7,6 +7,6 @@ description: This is an embedded view of my Trello board showing current project
 
 
 
-![Trello Board](/quartz/public/static/trello.jpg)
+![Trello Board](quartz/trello.jpg)
 
 
