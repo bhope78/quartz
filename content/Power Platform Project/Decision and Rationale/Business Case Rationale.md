@@ -10,15 +10,15 @@ The purpose of this site is to create a portfolio project to demonstrate technic
 
 So the question that needs to be answered is do I frame the business case in the context of a portfolio project or do I frame in terms of an product or solution itself?
 
-The product itself will be a single user product since its a portfolio and I don't have additional users to work with.
+Since this a portfolio and I don't have additional users to work with.  Therfore, the product will be a single user application.  
 
 In general since I am spending all this time building a solution and its a single user product it should be a solution that benefits me since I will be the primary user.
 
 My thought for the solution that benefits me is a health tracker something where I can log various health metrics, exercise, nutrition.  While I get these through various means such as using myfitnesspal, my apple watch, the bluetooth weight scale they are somewhat centralized through apple health but other things are not such ph level monitoring, supplements.  Have a portal where I am logging all these items will give me a place where I can log and see results.
 
-However since Power Platform is primarily a tool internal for companies and not and end product that complicates things a bit.  The typical orgnaizational elements do not apply for this product since I am building basically a consumer product in an organizational structure.  
+However since Power Platform is primarily a tool internal for companies and not and end product that complicates things a bit.  The typical organizational elements do not apply for this product since I am building basically a consumer product in an organizational structure.  
 
-Do I follow a consumer product project path or do I follow an internal company project management path?
+Do I follow a consumer product project path or do I follow an internal company project management path, Do I frame this project as a portfolio project or as internal solution?
 
 #### My Decision Use a Hybrid Approach 
 
