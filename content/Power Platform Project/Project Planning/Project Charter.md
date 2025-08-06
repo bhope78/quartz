@@ -1,5 +1,5 @@
 ---
-title: Power Platform Project
+title: Project Charter
 ---
 
 | Role            | Owner      |
