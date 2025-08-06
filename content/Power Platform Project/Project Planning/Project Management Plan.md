@@ -1,5 +1,5 @@
 ---
-title: 02 Project Charter
+title: 03 Project Management Plan
 ---
 
 | Role            | Owner      |
