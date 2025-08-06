@@ -1,3 +1,3 @@
 ---
-title: Power Platform Project Project Planning
+title: Project Planning
 ---
