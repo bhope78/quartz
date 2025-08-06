@@ -1,5 +1,5 @@
 ---
-title: 00 Gantt Chart
+title: 99 Gantt Chart
 description: This is an embedded view of a ClickUp Project Gantt Chart
 ---
 
