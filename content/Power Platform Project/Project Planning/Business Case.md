@@ -1,7 +1,7 @@
 ---
 title: 00 Business Case
 ---
-
+[[Business Case Rationale]]
 # Business Case – Health Tracking Portfolio App
 
 ## 1. Executive Summary
