@@ -1,3 +1,3 @@
 ---
-title: Power Platform Project
+title: Decision and Rationale
 ---
