@@ -97,35 +97,66 @@ export default (() => {
             return resource
           }
         })}
-        {/* ---- analytics: bryanhope.me ---- */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener('load', function () {
-                try {
-                  const body = JSON.stringify({
-                    url: location.href,
-                    referrer: document.referrer || null,
-                    meta: {}
-                  });
+       {/* ---- analytics: bryanhope.me ---- */}
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+(function () {
+  const endpoint = 'https://bryanhope.me/collect';
+  let lastUrl = null;
 
-                  // Prefer sendBeacon so it works during unload
-                  if (navigator.sendBeacon) {
-                    navigator.sendBeacon('https://bryanhope.me/collect', new Blob([body], { type: 'application/json' }));
-                  } else {
-                    fetch('https://bryanhope.me/collect', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body,
-                      keepalive: true
-                    });
-                  }
-                } catch (_) {}
-              });
-            `,
-          }}
-        />
-        {/* ---- end analytics ---- */}
+  function sendPageview() {
+    const url = location.href;
+    if (url === lastUrl) return;
+    lastUrl = url;
+
+    const body = JSON.stringify({
+      url,
+      referrer: document.referrer || null,
+      meta: {}
+    });
+
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(endpoint, new Blob([body], { type: 'application/json' }));
+    } else {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+        keepalive: true
+      }).catch(()=>{});
+    }
+  }
+
+  // Initial load
+  window.addEventListener('load', sendPageview);
+
+  // Fire when history changes (SPA nav)
+  const origPushState = history.pushState;
+  history.pushState = function () {
+    origPushState.apply(this, arguments);
+    window.dispatchEvent(new Event('locationchange'));
+  };
+  const origReplaceState = history.replaceState;
+  history.replaceState = function () {
+    origReplaceState.apply(this, arguments);
+    window.dispatchEvent(new Event('locationchange'));
+  };
+  window.addEventListener('popstate', () => window.dispatchEvent(new Event('locationchange')));
+  window.addEventListener('locationchange', () => setTimeout(sendPageview, 0));
+
+  // Also catch same-origin <a> clicks
+  document.addEventListener('click', (e) => {
+    const a = e.target && (e.target.closest ? e.target.closest('a') : null);
+    if (a && a.origin === location.origin) {
+      setTimeout(sendPageview, 0);
+    }
+  }, true);
+})();
+    `,
+  }}
+/>
+{/* ---- end analytics ---- */}
       </head>
     )
   }
