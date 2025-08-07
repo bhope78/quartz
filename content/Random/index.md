@@ -1,5 +1,5 @@
 ---
-title: Misc
+title: Random
 ---
 
 
