@@ -97,6 +97,35 @@ export default (() => {
             return resource
           }
         })}
+        {/* ---- analytics: bryanhope.me ---- */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('load', function () {
+                try {
+                  const body = JSON.stringify({
+                    url: location.href,
+                    referrer: document.referrer || null,
+                    meta: {}
+                  });
+
+                  // Prefer sendBeacon so it works during unload
+                  if (navigator.sendBeacon) {
+                    navigator.sendBeacon('https://bryanhope.me/collect', new Blob([body], { type: 'application/json' }));
+                  } else {
+                    fetch('https://bryanhope.me/collect', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body,
+                      keepalive: true
+                    });
+                  }
+                } catch (_) {}
+              });
+            `,
+          }}
+        />
+        {/* ---- end analytics ---- */}
       </head>
     )
   }

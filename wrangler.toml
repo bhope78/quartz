@@ -1,0 +1,13 @@
+name = "quartz-analytics"
+main = "worker/index.ts"
+compatibility_date = "2025-08-01"
+
+routes = [
+  { pattern = "bryanhope.me/ping",     zone_name = "bryanhope.me" },
+  { pattern = "bryanhope.me/collect*", zone_name = "bryanhope.me" }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "site_analytics"
+database_id = "7337547d-1938-4087-9f26-434f0fc09b1a"
